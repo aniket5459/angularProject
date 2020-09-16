@@ -1,0 +1,46 @@
+<body >
+<div class="all" >
+  <h1 style="text-align: center; color:white">Sign-Up Form</h1>
+  <form class="forms" #userForm="ngForm">
+
+    {{userForm.value | json}}
+
+    <div class="form-row" style="margin-top: 25px;">
+    <input type="text" placeholder="Name" required #name="ngModel" class="form-control bcol " [class.is-invalid]="name.invalid" name="userName" ngModel>
+  </div>
+  {{name.valid}}
+    <div class="form-row" style="margin-top: 9px;">
+    <input type="email" placeholder="Email" class="form-control bcol" required #email="ngModel" [class.is-invalid]="email.invalid" name="Email" ngModel>
+    </div>
+    {{email.valid}}
+
+    <div class="form-row" style="margin-top: 9px;">
+    <input type="date" placeholder="Enter your DOB" class="form-control bcol" name="date" required #date="ngModel" [class.is-invalid]="date.invalid" ngModel>
+      </div>
+      {{date.valid}}
+    
+    <div class="form-row" style="margin-top: 9px;">
+    <input type="password" placeholder="Password" class="form-control bcol" name="password" required #password="ngModel" [class.is-invalid]="password.invalid" ngModel>
+    </div>
+    {{password.valid}}
+    
+    
+    <div class="form-row" style="margin-top: 9px;">
+    <input type="password" placeholder="Confirm Password" class="form-control bcol" name="cnfpassword"  required #cnfpassword="ngModel" [class.is-invalid]="cnfpassword.invalid" ngModel >
+    </div>
+    {{cnfpassword.valid}}
+    
+   <div class="form-row " style="margin-top: 9px;">
+    <label style="color:black; font-weight:bold"> Be a Member For a :</label>
+    <select class= "custom-select " name="choices" ngModel >
+       <option *ngFor="let choice of choices " >{{choice}}</option>
+    </select>
+   </div>
+    <div class="form-row" style="margin-top: 9px;">
+   <button class="btn  btn-lg btn-primary ">Submit</button>
+    </div>
+    
+
+  </form>
+</div>
+</body>
